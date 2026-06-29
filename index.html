@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Growth Partner — Scale Your DSA Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:      #0D1B40;
+    --navy-mid:  #152354;
+    --teal:      #028090;
+    --teal-mid:  #059BAA;
+    --teal-lite: #e0f4f7;
+    --gold:      #F59E0B;
+    --green:     #10B981;
+    --red:       #EF4444;
+    --slate:     #64748B;
+    --dark:      #1E293B;
+    --off:       #F7FBFC;
+    --white:     #FFFFFF;
+    --border:    #E2E8F0;
+
+    --display: 'Plus Jakarta Sans', sans-serif;
+    --body:    'DM Sans', sans-serif;
+
+    --max: 1140px;
+    --r: 12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--white);
+    color: var(--dark);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(20px, 4vw, 60px);
+    height: 68px;
+    background: rgba(13,27,64,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--display); font-size: 1.15rem; color: var(--white); text-decoration: none;
+  }
+  .nav-logo svg { width: 28px; height: 28px; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--teal-mid); }
+  .nav-cta {
+    background: var(--teal); color: var(--white);
+    padding: 8px 20px; border-radius: 6px; text-decoration: none;
+    font-size: 0.875rem; font-weight: 600; transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--teal-mid); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 100px clamp(20px,4vw,60px) 60px;
+  }
+  .hero-blob {
+    position: absolute; border-radius: 50%;
+    background: var(--teal); opacity: 0.08; pointer-events: none;
+  }
+  .blob-1 { width: 600px; height: 600px; top: -180px; right: -160px; }
+  .blob-2 { width: 300px; height: 300px; bottom: 60px; right: 200px; opacity: 0.05; }
+  .blob-3 { width: 180px; height: 180px; bottom: -40px; left: 40%; opacity: 0.06; }
+
+  .hero-inner {
+    max-width: var(--max); margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(2,128,144,0.18); border: 1px solid rgba(2,128,144,0.35);
+    color: var(--teal-mid); padding: 6px 14px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-mid); display: block; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+  h1 {
+    font-family: var(--display); font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    color: var(--white); line-height: 1.1; font-weight: 800;
+    margin-bottom: 20px;
+  }
+  h1 em { font-style: normal; color: var(--teal-mid); }
+  .hero-sub {
+    font-size: clamp(1rem, 1.6vw, 1.15rem); color: rgba(255,255,255,0.6);
+    line-height: 1.7; margin-bottom: 36px; max-width: 500px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal); color: var(--white);
+    padding: 14px 28px; border-radius: 8px; text-decoration: none;
+    font-size: 0.95rem; font-weight: 600; transition: all .2s;
+    box-shadow: 0 4px 20px rgba(2,128,144,0.35);
+  }
+  .btn-primary:hover { background: var(--teal-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(2,128,144,0.45); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8);
+    padding: 14px 28px; border-radius: 8px; text-decoration: none;
+    font-size: 0.95rem; font-weight: 500; transition: all .2s;
+  }
+  .btn-ghost:hover { border-color: var(--teal-mid); color: var(--teal-mid); }
+
+  /* Hero stats card */
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(8px);
+  }
+  .hero-card-title {
+    font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .1em; color: var(--teal-mid); margin-bottom: 24px;
+  }
+  .stat-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; margin-bottom: 24px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 18px;
+  }
+  .stat-box .num { font-family: var(--display); font-size: 1.9rem; color: var(--white); font-weight: 800; line-height: 1; }
+  .stat-box .num.green { color: var(--green); }
+  .stat-box .num.gold { color: var(--gold); }
+  .stat-box .lbl { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
+
+  .before-after {
+    background: rgba(2,128,144,0.1); border: 1px solid rgba(2,128,144,0.2);
+    border-radius: 10px; padding: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .ba-col { flex: 1; }
+  .ba-col .label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+  .ba-col.before .label { color: var(--red); }
+  .ba-col.after .label { color: var(--green); }
+  .ba-col .val { font-family: var(--display); font-size: 1.4rem; font-weight: 700; }
+  .ba-col.before .val { color: rgba(255,255,255,0.5); }
+  .ba-col.after .val { color: var(--green); }
+  .ba-arrow { color: var(--teal-mid); font-size: 1.4rem; }
+  .ba-meta { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 3px; }
+
+  /* ── PAIN ── */
+  #pain {
+    background: var(--off); padding: 100px clamp(20px,4vw,60px);
+  }
+  .section-inner { max-width: var(--max); margin: 0 auto; }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .12em; color: var(--teal); margin-bottom: 12px;
+  }
+  h2 {
+    font-family: var(--display); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--navy); line-height: 1.15; font-weight: 800; margin-bottom: 16px;
+  }
+  .section-sub { font-size: 1.05rem; color: var(--slate); line-height: 1.7; max-width: 560px; margin-bottom: 56px; }
+
+  .pain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .pain-card {
+    background: var(--white); border-radius: var(--r);
+    border: 1px solid var(--border);
+    padding: 28px 28px 28px 24px;
+    position: relative; overflow: hidden;
+    transition: box-shadow .25s, transform .25s;
+  }
+  .pain-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
+  .pain-stripe {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    border-radius: 12px 0 0 12px;
+  }
+  .pain-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+  .pain-card p { font-size: 0.9rem; color: var(--slate); line-height: 1.65; }
+  .pain-stat {
+    display: inline-block; margin-top: 12px;
+    font-family: var(--display); font-size: 1.5rem; font-weight: 800; color: var(--red);
+  }
+
+  /* ── SOLUTION ── */
+  #solution {
+    background: var(--navy);
+    padding: 100px clamp(20px,4vw,60px);
+    position: relative; overflow: hidden;
+  }
+  #solution .blob-bg {
+    position: absolute; width: 500px; height: 500px;
+    border-radius: 50%; background: var(--teal); opacity: 0.06;
+    right: -150px; top: -100px; pointer-events: none;
+  }
+  #solution .eyebrow { color: var(--teal-mid); }
+  #solution h2 { color: var(--white); }
+  #solution .section-sub { color: rgba(255,255,255,0.5); }
+  .pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
+  .pillar {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: var(--r); padding: 32px 28px;
+    transition: border-color .25s, background .25s;
+  }
+  .pillar:hover { border-color: rgba(2,128,144,0.4); background: rgba(2,128,144,0.07); }
+  .pillar-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; font-size: 1.4rem;
+  }
+  .pillar h3 { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+  .pillar p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+  /* ── SOCIAL PROOF ── */
+  #proof { background: var(--off); padding: 100px clamp(20px,4vw,60px); }
+
+  .case-study {
+    background: var(--white); border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden; margin-bottom: 28px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  }
+  .case-header {
+    padding: 18px 28px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .case-tag {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .1em; padding: 4px 10px; border-radius: 100px;
+    background: rgba(2,128,144,0.1); color: var(--teal);
+  }
+  .case-title { font-size: 0.9rem; font-weight: 600; color: var(--slate); }
+
+  .ba-table {
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+  }
+  .ba-side { padding: 28px; }
+  .ba-side.before { background: #FFF5F5; }
+  .ba-side.after  { background: #F0FDF4; }
+  .ba-mid {
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 16px; background: var(--white);
+    font-size: 1.6rem; color: var(--teal);
+  }
+  .ba-heading {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; margin-bottom: 20px;
+  }
+  .ba-side.before .ba-heading { color: var(--red); }
+  .ba-side.after  .ba-heading { color: var(--green); }
+  .ba-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .before-dot { background: var(--red); }
+  .after-dot  { background: var(--green); }
+  .ba-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.875rem;
+  }
+  .ba-row:last-child { border-bottom: none; }
+  .ba-row .k { color: var(--slate); }
+  .ba-side.before .ba-row .v { color: var(--red); font-weight: 700; }
+  .ba-side.after  .ba-row .v { color: var(--green); font-weight: 700; }
+
+  .case-footer {
+    padding: 16px 28px;
+    background: var(--navy); color: var(--white);
+    display: flex; align-items: center; justify-content: center; gap: 32px;
+    font-size: 0.875rem; font-weight: 600;
+    flex-wrap: wrap;
+  }
+  .case-footer span { display: flex; align-items: center; gap: 6px; }
+  .case-footer svg { flex-shrink: 0; }
+
+  /* ── HOW IT WORKS ── */
+  #how { background: var(--white); padding: 100px clamp(20px,4vw,60px); }
+  .steps { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; margin-top: 56px; position: relative; }
+  .steps::before {
+    content: '';
+    position: absolute; top: 32px; left: 10%; right: 10%; height: 2px;
+    background: linear-gradient(90deg, var(--teal) 0%, rgba(2,128,144,0.1) 100%);
+    z-index: 0;
+  }
+  .step { text-align: center; padding: 0 12px; position: relative; z-index: 1; }
+  .step-num {
+    width: 64px; height: 64px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: var(--display); font-size: 1.3rem; font-weight: 800;
+    position: relative;
+  }
+  .step-num::after {
+    content: ''; position: absolute; inset: -3px;
+    border-radius: 50%; border: 2px solid var(--teal); opacity: 0.3;
+  }
+  .step h3 { font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+  .step p { font-size: 0.8rem; color: var(--slate); line-height: 1.6; }
+
+  /* ── COMPARISON ── */
+  #compare { background: var(--off); padding: 100px clamp(20px,4vw,60px); }
+  .compare-table {
+    background: var(--white); border-radius: 16px;
+    border: 1px solid var(--border); overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    margin-top: 48px;
+  }
+  .compare-head {
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+    background: var(--navy);
+  }
+  .compare-head div { padding: 16px 24px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+  .compare-head div:first-child { color: rgba(255,255,255,0.4); }
+  .compare-head .col-bad  { color: var(--red); text-align: center; }
+  .compare-head .col-good { color: var(--green); text-align: center; }
+  .compare-row {
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row:nth-child(even) { background: #FAFCFF; }
+  .compare-row div { padding: 16px 24px; font-size: 0.9rem; display: flex; align-items: center; }
+  .compare-row .metric { font-weight: 600; color: var(--dark); }
+  .compare-row .bad  { color: var(--red); justify-content: center; text-align: center; }
+  .compare-row .good { color: var(--green); font-weight: 700; justify-content: center; text-align: center; }
+
+  /* ── OBJECTIONS ── */
+  #objections { background: var(--navy); padding: 100px clamp(20px,4vw,60px); position: relative; overflow: hidden; }
+  #objections .blob-bg { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: var(--teal); opacity: 0.05; left: -120px; bottom: -80px; pointer-events: none; }
+  #objections .eyebrow { color: var(--teal-mid); }
+  #objections h2 { color: var(--white); }
+  .obj-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
+  .obj-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+    border-radius: var(--r); padding: 28px 32px;
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 20px; align-items: start;
+    transition: border-color .25s;
+  }
+  .obj-card:hover { border-color: rgba(2,128,144,0.35); }
+  .obj-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+  }
+  .obj-q { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .obj-a { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+  /* ── PRICING ── */
+  #pricing { background: var(--off); padding: 100px clamp(20px,4vw,60px); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
+  .price-card {
+    background: var(--white); border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    transition: box-shadow .25s, transform .25s;
+    position: relative; overflow: hidden;
+  }
+  .price-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+  .price-card.featured {
+    background: var(--teal); border-color: var(--teal);
+  }
+  .price-card.featured * { color: var(--white) !important; }
+  .price-card.featured .price-item { border-color: rgba(255,255,255,0.15) !important; }
+  .featured-badge {
+    position: absolute; top: 0; right: 0;
+    background: var(--gold); color: var(--navy) !important;
+    font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em;
+    padding: 5px 14px; border-radius: 0 16px 0 10px;
+  }
+  .price-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--teal); margin-bottom: 12px; }
+  .price-amount { font-family: var(--display); font-size: 2rem; font-weight: 800; color: var(--navy); line-height: 1; }
+  .price-note { font-size: 0.8rem; color: var(--slate); margin-top: 4px; margin-bottom: 24px; }
+  .price-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+  .price-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.875rem; color: var(--dark);
+    padding: 7px 0; border-bottom: 1px solid rgba(226,232,240,0.5);
+  }
+  .price-item:last-child { border-bottom: none; }
+  .price-item svg { flex-shrink: 0; margin-top: 2px; }
+
+  .guarantee-bar {
+    margin-top: 36px; padding: 20px 28px;
+    background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25);
+    border-radius: var(--r);
+    display: flex; align-items: center; gap: 16px;
+    font-size: 0.9rem; color: var(--dark);
+  }
+  .guarantee-bar svg { flex-shrink: 0; }
+  .guarantee-bar strong { color: var(--green); }
+
+  /* ── ROI ── */
+  #roi { background: var(--white); padding: 100px clamp(20px,4vw,60px); }
+  .roi-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: stretch; margin-top: 48px; }
+  .roi-card {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .roi-card-head { padding: 18px 24px; font-size: 0.9rem; font-weight: 700; }
+  .roi-card.cold .roi-card-head { background: #FEF2F2; color: var(--red); }
+  .roi-card.wa   .roi-card-head { background: #F0FDF4; color: var(--green); }
+  .roi-row { display: flex; justify-content: space-between; padding: 13px 24px; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+  .roi-row:last-child { border-bottom: none; }
+  .roi-row .rk { color: var(--slate); }
+  .roi-row.total { background: #FFF5F5; }
+  .roi-card.wa .roi-row.total { background: #F0FDF4; }
+  .roi-row.total .rv { font-weight: 800; font-size: 1rem; }
+  .roi-card.cold .roi-row.total .rv { color: var(--red); }
+  .roi-card.wa   .roi-row.total .rv { color: var(--green); }
+  .roi-mid {
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 24px;
+  }
+  .roi-arrow-box {
+    background: var(--navy); border-radius: 12px;
+    padding: 20px 16px; text-align: center;
+  }
+  .roi-arrow-box .big { font-family: var(--display); font-size: 1.8rem; color: var(--green); font-weight: 800; }
+  .roi-arrow-box .sm { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+  .roi-arrow-box .arrow { font-size: 1.4rem; color: var(--teal-mid); margin: 8px 0; }
+  .roi-note {
+    margin-top: 24px; text-align: center; font-size: 0.9rem;
+    color: var(--teal); font-weight: 600; font-style: italic;
+  }
+
+  /* ── CTA ── */
+  #cta {
+    background: var(--navy); padding: 100px clamp(20px,4vw,60px);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  #cta .blob-bg { position: absolute; border-radius: 50%; background: var(--teal); pointer-events: none; }
+  #cta .b1 { width: 500px; height: 500px; opacity: 0.06; top: -200px; left: -150px; }
+  #cta .b2 { width: 300px; height: 300px; opacity: 0.05; bottom: -100px; right: -80px; }
+
+  .scarcity-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--red); color: var(--white);
+    padding: 8px 18px; border-radius: 100px;
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 28px;
+  }
+  #cta h2 { color: var(--white); margin-bottom: 16px; }
+  #cta .section-sub { color: rgba(255,255,255,0.5); margin: 0 auto 40px; text-align: center; }
+
+  .cta-steps {
+    display: flex; justify-content: center; gap: 0;
+    margin-bottom: 48px; flex-wrap: wrap;
+  }
+  .cta-step {
+    display: flex; align-items: center; gap: 0;
+  }
+  .cta-step-inner { text-align: center; padding: 0 20px; }
+  .cta-step-num {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(2,128,144,0.25); border: 1px solid rgba(2,128,144,0.4);
+    color: var(--teal-mid); font-weight: 800; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 10px;
+  }
+  .cta-step-inner p { font-size: 0.8rem; color: rgba(255,255,255,0.5); max-width: 100px; }
+  .cta-connector { color: rgba(255,255,255,0.15); font-size: 1.4rem; padding: 0 4px; margin-top: -18px; }
+
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-wa {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25D366; color: var(--white);
+    padding: 16px 32px; border-radius: 10px; text-decoration: none;
+    font-size: 1rem; font-weight: 700; transition: all .2s;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+  }
+  .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,0.45); }
+  .btn-outline-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8);
+    padding: 16px 32px; border-radius: 10px; text-decoration: none;
+    font-size: 1rem; font-weight: 500; transition: all .2s;
+  }
+  .btn-outline-white:hover { border-color: var(--teal-mid); color: var(--teal-mid); }
+
+  .cta-pricing-strip {
+    margin-top: 32px; font-size: 0.8rem; color: rgba(255,255,255,0.3);
+    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+  }
+  .cta-pricing-strip span::before { content: '·'; margin-right: 24px; }
+  .cta-pricing-strip span:first-child::before { display: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #09122E; padding: 28px clamp(20px,4vw,60px);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  footer p { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+  footer .f-links { display: flex; gap: 20px; }
+  footer .f-links a { font-size: 0.8rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color .2s; }
+  footer .f-links a:hover { color: var(--teal-mid); }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+  .reveal-delay-4 { transition-delay: .4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .pain-grid, .pillars, .pricing-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 28px; }
+    .steps::before { display: none; }
+    .ba-table { grid-template-columns: 1fr; }
+    .ba-mid { padding: 16px; transform: rotate(90deg); }
+    .compare-head, .compare-row { grid-template-columns: 1fr 1fr 1fr; }
+    .roi-grid { grid-template-columns: 1fr; }
+    .roi-mid { padding: 20px 0; }
+    .roi-arrow-box { display: flex; gap: 16px; align-items: center; justify-content: center; }
+    .nav-links { display: none; }
+    .cta-steps { flex-direction: column; align-items: center; }
+    .cta-connector { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; }
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#25D366"/>
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.417A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="#25D366" stroke-width="1.5" fill="none"/>
+    </svg>
+    WhatsApp Growth Partner
+  </a>
+  <div class="nav-links">
+    <a href="#proof">Results</a>
+    <a href="#how">How It Works</a>
+    <a href="#calc-compare">ROI Calculator</a>
+    <a href="#calc-hiring">Hiring Cost</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+  <a href="#cta" class="nav-cta">Get Started →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="hero-blob blob-3"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span></span> Now onboarding DSAs across India
+      </div>
+      <h1>Stop Cold Calling.<br>Start <em>Scaling</em>.</h1>
+      <p class="hero-sub">We set up, manage, and scale your WhatsApp Business campaigns — fully compliant, zero internal team required. Replace ₹2,10,000/month in caller salaries with results-driven messaging.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+          Book a Free 30-min Call
+        </a>
+        <a href="#proof" class="btn-ghost">See Real Results ↓</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">Live client snapshot · Credit Card DSA</div>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num green">1,400</div>
+          <div class="lbl">Monthly leads generated</div>
+        </div>
+        <div class="stat-box">
+          <div class="num gold">63%</div>
+          <div class="lbl">Average open rate</div>
+        </div>
+        <div class="stat-box">
+          <div class="num green">₹48</div>
+          <div class="lbl">Cost per lead</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" style="color:#EF4444">45</div>
+          <div class="lbl">Days to achieve this</div>
+        </div>
+      </div>
+      <div class="before-after">
+        <div class="ba-col before">
+          <div class="label">Before</div>
+          <div class="val">180</div>
+          <div class="ba-meta">leads/month · ₹1,028/lead</div>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-col after">
+          <div class="label">After</div>
+          <div class="val">1,400</div>
+          <div class="ba-meta">leads/month · ₹48/lead</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section id="pain">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">The Real Problem</p>
+      <h2>Does This Sound Familiar?</h2>
+      <p class="section-sub">Every DSA in India is running the same playbook — and hitting the same wall.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal reveal-delay-1">
+        <div class="pain-stripe" style="background:#EF4444"></div>
+        <h3>You called 800 numbers today</h3>
+        <p>How many actually picked up? Cold call pick-up rates have fallen below 6% as customers increasingly ignore unknown numbers.</p>
+        <span class="pain-stat">&lt; 6%</span>
+      </div>
+      <div class="pain-card reveal reveal-delay-2">
+        <div class="pain-stripe" style="background:#F97316"></div>
+        <h3>3 callers quit last month. You're training again.</h3>
+        <p>Hiring, onboarding, and managing a calling team is a full-time job on top of your actual business. Attrition kills momentum.</p>
+        <span class="pain-stat" style="color:#F97316">30–40%</span>
+        <p style="margin-top:4px;font-size:0.78rem;color:var(--slate)">annual attrition in calling teams</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-3">
+        <div class="pain-stripe" style="background:#6D28D9"></div>
+        <h3>Your monthly salary bill: ₹2,10,000+</h3>
+        <p>Salaries, infrastructure, team leads, and training costs pile up regardless of results. Fixed cost, variable outcome.</p>
+        <span class="pain-stat" style="color:#6D28D9">₹2.1L/mo</span>
+      </div>
+      <div class="pain-card reveal reveal-delay-4">
+        <div class="pain-stripe" style="background:var(--teal)"></div>
+        <h3>Your competitor is already scaling faster</h3>
+        <p>DSAs who switched to WhatsApp-first outreach are reaching 50,000+ customers per day. You haven't made the move yet.</p>
+        <span class="pain-stat" style="color:var(--teal)">40×</span>
+        <p style="margin-top:4px;font-size:0.78rem;color:var(--slate)">more reach vs cold calling</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="blob-bg"></div>
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">What We Do</p>
+      <h2>WhatsApp at Scale —<br>Compliant, Managed, Proven</h2>
+      <p class="section-sub">We're not a software tool. We're your dedicated WhatsApp operations team — handling everything from setup to daily campaign management.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-icon" style="background:rgba(2,128,144,0.15)">🔧</div>
+        <h3>Full Account Setup</h3>
+        <p>We handle WhatsApp Business API verification, BSP onboarding, and phone number linking. Zero technical knowledge required from your side. Live in 3–5 days.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-icon" style="background:rgba(245,158,11,0.15)">🛡️</div>
+        <h3>Compliance-First Scaling</h3>
+        <p>Our proprietary warm-up methodology ensures your account stays active and healthy through high-volume campaigns. We monitor quality scores daily — zero permanent bans to date.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <div class="pillar-icon" style="background:rgba(16,185,129,0.15)">📊</div>
+        <h3>End-to-End Campaign Management</h3>
+        <p>We plan, schedule, and execute campaigns. You share your customer list and goals — we handle template approval, sending, and performance reporting every month.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-icon" style="background:rgba(109,40,217,0.15)">🤖</div>
+        <h3>Follow-Up Automation</h3>
+        <p>Automated reply flows for interested leads, opt-out management, and follow-up sequences. Warm leads don't go cold while you're focused elsewhere.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-icon" style="background:rgba(239,68,68,0.15)">📈</div>
+        <h3>Real-Time Analytics</h3>
+        <p>Track delivery rates, open rates, click-throughs, and opt-outs in real time. Monthly reports with actionable insights — no guesswork, just data.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <div class="pillar-icon" style="background:rgba(2,128,144,0.15)">🚀</div>
+        <h3>Managed Scale-Up</h3>
+        <p>Once traction is proven, we help you scale from 50,000 to 5 lakh+ messages per month safely — without risking account health or compliance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="proof">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">Real Results</p>
+      <h2>Before & After —<br>Real DSA Businesses</h2>
+      <p class="section-sub">Numbers from clients currently using our managed service. No made-up benchmarks, no industry averages.</p>
+    </div>
+
+    <!-- Case Study 1 -->
+    <div class="case-study reveal">
+      <div class="case-header">
+        <span class="case-tag">Case Study 01</span>
+        <span class="case-title">Credit Card & Personal Loan DSA · Mumbai</span>
+      </div>
+      <div class="ba-table">
+        <div class="ba-side before">
+          <div class="ba-heading"><span class="ba-dot before-dot"></span> Before · Cold Calling Only</div>
+          <div class="ba-row"><span class="k">Daily calls made</span><span class="v">800 – 1,000</span></div>
+          <div class="ba-row"><span class="k">Pick-up rate</span><span class="v">&lt; 6%</span></div>
+          <div class="ba-row"><span class="k">Monthly leads generated</span><span class="v">~180</span></div>
+          <div class="ba-row"><span class="k">Monthly team cost</span><span class="v">₹1,85,000</span></div>
+          <div class="ba-row"><span class="k">Cost per lead</span><span class="v">₹1,028</span></div>
+        </div>
+        <div class="ba-mid">→</div>
+        <div class="ba-side after">
+          <div class="ba-heading"><span class="ba-dot after-dot"></span> After · WhatsApp Managed</div>
+          <div class="ba-row"><span class="k">Daily messages sent</span><span class="v">3,000 – 5,000</span></div>
+          <div class="ba-row"><span class="k">Open rate</span><span class="v">58 – 65%</span></div>
+          <div class="ba-row"><span class="k">Monthly leads generated</span><span class="v">~1,400</span></div>
+          <div class="ba-row"><span class="k">Monthly total cost</span><span class="v">₹68,000</span></div>
+          <div class="ba-row"><span class="k">Cost per lead</span><span class="v">₹48</span></div>
+        </div>
+      </div>
+      <div class="case-footer">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          7.8× more leads generated
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          95% lower cost per lead
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Achieved within 45 days of going live
+        </span>
+      </div>
+    </div>
+
+    <!-- Case Study 2 -->
+    <div class="case-study reveal" style="border-top: 2px solid var(--gold);">
+      <div class="case-header">
+        <span class="case-tag" style="background:rgba(245,158,11,0.1);color:#92400E">Case Study 02</span>
+        <span class="case-title">Mutual Fund & Insurance DSA · Pune</span>
+      </div>
+      <div class="ba-table">
+        <div class="ba-side before">
+          <div class="ba-heading"><span class="ba-dot before-dot"></span> Before · Cold Calling Only</div>
+          <div class="ba-row"><span class="k">Daily calls made</span><span class="v">600 – 700</span></div>
+          <div class="ba-row"><span class="k">Appointment conversion</span><span class="v">&lt; 3%</span></div>
+          <div class="ba-row"><span class="k">Monthly SIPs opened</span><span class="v">~22</span></div>
+          <div class="ba-row"><span class="k">Monthly team cost</span><span class="v">₹1,40,000</span></div>
+          <div class="ba-row"><span class="k">Cost per SIP</span><span class="v">₹6,364</span></div>
+        </div>
+        <div class="ba-mid">→</div>
+        <div class="ba-side after">
+          <div class="ba-heading"><span class="ba-dot after-dot"></span> After · WhatsApp Managed</div>
+          <div class="ba-row"><span class="k">Daily messages sent</span><span class="v">2,500 – 4,000</span></div>
+          <div class="ba-row"><span class="k">Appointment conversion</span><span class="v">12 – 18%</span></div>
+          <div class="ba-row"><span class="k">Monthly SIPs opened</span><span class="v">~185</span></div>
+          <div class="ba-row"><span class="k">Monthly total cost</span><span class="v">₹58,000</span></div>
+          <div class="ba-row"><span class="k">Cost per SIP</span><span class="v">₹314</span></div>
+        </div>
+      </div>
+      <div class="case-footer" style="border-top: 2px solid var(--gold);">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          8.4× more SIPs opened
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          95% lower cost per conversion
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Live within 30 days of onboarding
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center">
+      <p class="eyebrow">The Process</p>
+      <h2>From Zero to Live in 7 Days</h2>
+      <p class="section-sub" style="margin:0 auto 0">A managed handoff — we do the heavy lifting at every stage.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num" style="background:rgba(2,128,144,0.12);color:var(--teal)">1</div>
+        <h3>Onboarding & Setup</h3>
+        <p>Sign agreement, pay setup fee. We create and verify your WhatsApp Business API account within 3–5 days.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num" style="background:rgba(109,40,217,0.12);color:#6D28D9">2</div>
+        <h3>Account Warm-Up</h3>
+        <p>Our proprietary methodology builds account trust with Meta before any high-volume campaign starts.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num" style="background:rgba(16,185,129,0.12);color:var(--green)">3</div>
+        <h3>Campaign Launch</h3>
+        <p>Share your customer list and message goals. We handle template approval and full campaign execution.</p>
+      </div>
+      <div class="step reveal reveal-delay-4">
+        <div class="step-num" style="background:rgba(245,158,11,0.12);color:var(--gold)">4</div>
+        <h3>Monitor & Optimise</h3>
+        <p>Real-time delivery and open-rate tracking. Monthly reports with clear, actionable next steps.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:.5s">
+        <div class="step-num" style="background:rgba(239,68,68,0.12);color:var(--red)">5</div>
+        <h3>Scale Up</h3>
+        <p>Once traction is proven, we scale you from 50K to 5L+ messages per month — safely and compliantly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="compare">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">Side by Side</p>
+      <h2>WhatsApp vs Cold Calling</h2>
+      <p class="section-sub">The numbers make this a straightforward decision.</p>
+    </div>
+    <div class="compare-table reveal">
+      <div class="compare-head">
+        <div></div>
+        <div class="col-bad">❌ Cold Calling</div>
+        <div class="col-good">✅ WhatsApp Managed</div>
+      </div>
+      <div class="compare-row">
+        <div class="metric">Daily Reach</div>
+        <div class="bad">800 – 1,200</div>
+        <div class="good">50,000 – 1,00,000+</div>
+      </div>
+      <div class="compare-row">
+        <div class="metric">Cost per Lead</div>
+        <div class="bad">₹15 – ₹40</div>
+        <div class="good">₹1 – ₹3</div>
+      </div>
+      <div class="compare-row">
+        <div class="metric">Open / Listen Rate</div>
+        <div class="bad">&lt; 8%</div>
+        <div class="good">55 – 70%</div>
+      </div>
+      <div class="compare-row">
+        <div class="metric">Scalability</div>
+        <div class="bad">Limited by headcount</div>
+        <div class="good">Scales with a click</div>
+      </div>
+      <div class="compare-row">
+        <div class="metric">Response Tracking</div>
+        <div class="bad">Manual / unreliable</div>
+        <div class="good">Real-time analytics</div>
+      </div>
+      <div class="compare-row">
+        <div class="metric">Team Required</div>
+        <div class="bad">10–20 callers</div>
+        <div class="good">Zero internal team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section id="objections">
+  <div class="blob-bg"></div>
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">Common Questions</p>
+      <h2>Every Concern,<br>Answered Honestly</h2>
+    </div>
+    <div class="obj-grid">
+      <div class="obj-card reveal reveal-delay-1">
+        <div class="obj-icon" style="background:rgba(239,68,68,0.15)">🚫</div>
+        <div>
+          <div class="obj-q">What if my WhatsApp account gets banned?</div>
+          <div class="obj-a">Our compliance-first methodology is built specifically to prevent this. We warm up accounts gradually, monitor quality scores daily, and never blast unverified lists. In 2+ years of running campaigns, our clients have had zero permanent bans. If any issue arises, we resolve it at no extra cost.</div>
+        </div>
+      </div>
+      <div class="obj-card reveal reveal-delay-2">
+        <div class="obj-icon" style="background:rgba(245,158,11,0.15)">💰</div>
+        <div>
+          <div class="obj-q">Isn't the ₹20,000–₹25,000 setup fee too high?</div>
+          <div class="obj-a">Compare it to one month of a cold calling team — that's ₹2,10,000+. The setup fee is a one-time cost that gets your entire WhatsApp infrastructure live. Most clients recover it within the first two weeks of their first campaign through lead quality alone.</div>
+        </div>
+      </div>
+      <div class="obj-card reveal reveal-delay-3">
+        <div class="obj-icon" style="background:rgba(109,40,217,0.15)">🔒</div>
+        <div>
+          <div class="obj-q">How do I know my customer data is safe?</div>
+          <div class="obj-a">Your data never leaves your control. We operate through your own WhatsApp Business account — we don't store or share your contact lists. You own the account, the number, and the data. We are purely your operational partner.</div>
+        </div>
+      </div>
+      <div class="obj-card reveal">
+        <div class="obj-icon" style="background:rgba(16,185,129,0.15)">📋</div>
+        <div>
+          <div class="obj-q">Is WhatsApp marketing legal for financial products in India?</div>
+          <div class="obj-a">Yes, with proper opt-in and template compliance. We help you build opt-in flows, get templates pre-approved by Meta, and follow all TRAI and Meta guidelines for financial services messaging. We've run compliant campaigns for credit cards, loans, mutual funds, and insurance DSAs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center">
+      <p class="eyebrow">Pricing</p>
+      <h2>Simple. Predictable. No Surprises.</h2>
+      <p class="section-sub" style="margin:0 auto">Three components. Total cost still 60–70% lower than a cold calling team.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Setup -->
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-label">One-Time Setup</div>
+        <div class="price-amount">₹20,000 – ₹25,000</div>
+        <div class="price-note">Introductory offer · paid once</div>
+        <div class="price-divider"></div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          WhatsApp Business API account creation
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          BSP onboarding & verification
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Phone number linking & setup
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Template submission (up to 5)
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Initial account warm-up
+        </div>
+      </div>
+
+      <!-- Monthly -->
+      <div class="price-card featured reveal reveal-delay-2">
+        <div class="featured-badge">Most Value</div>
+        <div class="price-label">Monthly Management</div>
+        <div class="price-amount">₹8,000 – ₹12,000</div>
+        <div class="price-note">Based on complexity · billed monthly</div>
+        <div class="price-divider"></div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Campaign planning & scheduling
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Compliance & account health monitoring
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Monthly performance reporting
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Follow-up automation (if required)
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Dedicated account support
+        </div>
+      </div>
+
+      <!-- Per Message -->
+      <div class="price-card reveal reveal-delay-3">
+        <div class="price-label">Per Message</div>
+        <div class="price-amount">₹0.22 – ₹0.25</div>
+        <div class="price-note">Utility · Marketing: ₹1.10/msg</div>
+        <div class="price-divider"></div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Utility messages: transactional alerts
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Marketing messages: promotional campaigns
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Transparent per-message billing
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Volume discounts available
+        </div>
+        <div class="price-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#028090" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          No hidden platform fees
+        </div>
+      </div>
+    </div>
+    <div class="guarantee-bar reveal">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div><strong>Our Guarantee:</strong> If your first campaign doesn't meet agreed benchmarks, we re-run it at zero extra cost. No questions asked.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section id="roi">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center">
+      <p class="eyebrow">The Math</p>
+      <h2>What You Actually Save</h2>
+      <p class="section-sub" style="margin:0 auto">At 50,000 marketing messages per month.</p>
+    </div>
+    <div class="roi-grid reveal">
+      <div class="roi-card cold">
+        <div class="roi-card-head">📞 Cold Calling Team — Monthly</div>
+        <div class="roi-row"><span class="rk">10 callers @ ₹15,000/month</span><span class="rv">₹1,50,000</span></div>
+        <div class="roi-row"><span class="rk">Team lead salary</span><span class="rv">₹25,000</span></div>
+        <div class="roi-row"><span class="rk">Infrastructure & tools</span><span class="rv">₹15,000</span></div>
+        <div class="roi-row"><span class="rk">Training & attrition cost</span><span class="rv">₹20,000</span></div>
+        <div class="roi-row total"><span class="rk" style="font-weight:700">Total Monthly Cost</span><span class="rv" style="color:var(--red)">₹2,10,000</span></div>
+      </div>
+      <div class="roi-mid">
+        <div class="roi-arrow-box">
+          <div class="big">−68%</div>
+          <div class="arrow">↓</div>
+          <div class="sm">Monthly savings</div>
+          <div class="big" style="color:var(--gold);margin-top:12px">₹1.42L</div>
+          <div class="sm">saved per month</div>
+        </div>
+      </div>
+      <div class="roi-card wa">
+        <div class="roi-card-head">💬 WhatsApp Managed Service — Monthly</div>
+        <div class="roi-row"><span class="rk">50K marketing msgs × ₹1.10</span><span class="rv">₹55,000</span></div>
+        <div class="roi-row"><span class="rk">Monthly management fee</span><span class="rv">₹10,000</span></div>
+        <div class="roi-row"><span class="rk">Automation & follow-ups</span><span class="rv">₹3,000</span></div>
+        <div class="roi-row"><span class="rk">Zero internal team needed</span><span class="rv" style="color:var(--green)">₹0</span></div>
+        <div class="roi-row total"><span class="rk" style="font-weight:700">Total Monthly Cost</span><span class="rv" style="color:var(--green)">₹68,000</span></div>
+      </div>
+    </div>
+    <p class="roi-note reveal">You save ₹1,42,000/month while reaching 40× more customers per day.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="blob-bg b1"></div>
+  <div class="blob-bg b2"></div>
+  <div class="section-inner" style="position:relative;z-index:1">
+    <div class="scarcity-badge reveal">
+      🔥 Only 2 client slots open this month
+    </div>
+    <h2 class="reveal">Let's Get Your First<br>Campaign Live in 7 Days</h2>
+    <p class="section-sub reveal">Book a free 30-minute call. We'll audit your current setup, answer every question, and show you exactly what WhatsApp can do for your DSA business.</p>
+
+    <div class="cta-steps reveal">
+      <div class="cta-step">
+        <div class="cta-step-inner">
+          <div class="cta-step-num">1</div>
+          <p>Book a 30-min call</p>
+        </div>
+      </div>
+      <div class="cta-connector">›</div>
+      <div class="cta-step">
+        <div class="cta-step-inner">
+          <div class="cta-step-num">2</div>
+          <p>We audit your setup</p>
+        </div>
+      </div>
+      <div class="cta-connector">›</div>
+      <div class="cta-step">
+        <div class="cta-step-inner">
+          <div class="cta-step-num">3</div>
+          <p>Sign & pay setup fee</p>
+        </div>
+      </div>
+      <div class="cta-connector">›</div>
+      <div class="cta-step">
+        <div class="cta-step-inner">
+          <div class="cta-step-num">4</div>
+          <p>Go live in 7 days</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-actions reveal">
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+        Message Us on WhatsApp
+      </a>
+      <a href="mailto:hello@example.com" class="btn-outline-white">
+        📧 Send an Email Instead
+      </a>
+    </div>
+
+    <div class="cta-pricing-strip reveal">
+      <span>Setup: ₹20,000 – ₹25,000</span>
+      <span>Monthly from ₹8,000</span>
+      <span>Messages from ₹0.22/msg</span>
+      <span>Guarantee included</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ CALCULATORS V4 — WIZARD + INLINE IMPACT ════ -->
+
+<!-- CALC 1 -->
+<section id="calc-compare" style="background:var(--off);padding:100px clamp(20px,4vw,60px)">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:48px">
+      <p class="eyebrow">Live Calculator</p>
+      <h2>Telecalling vs WhatsApp —<br>Your Numbers, Your Answer</h2>
+      <p class="section-sub" style="margin:0 auto">3 steps. Each input shows its cost impact as you type. Final step = your personalised result.</p>
+    </div>
+    <div class="wiz-shell" id="wiz1">
+      <div class="wiz-progress">
+        <div class="wiz-step-dot active" data-wiz="1" onclick="wizGoto(1,'wiz1')"><div class="wsd-circle">1</div><div class="wsd-label">Team Size</div></div>
+        <div class="wiz-connector"></div>
+        <div class="wiz-step-dot" data-wiz="2" onclick="wizGoto(2,'wiz1')"><div class="wsd-circle">2</div><div class="wsd-label">Performance</div></div>
+        <div class="wiz-connector"></div>
+        <div class="wiz-step-dot" data-wiz="3" onclick="wizGoto(3,'wiz1')"><div class="wsd-circle">3</div><div class="wsd-label">Results</div></div>
+      </div>
+      <div class="wiz-headline-bar">
+        <div class="whl-item"><span class="whl-label">📞 Team Cost</span><span class="whl-val red-hl" id="wh1_tc_cost">—</span></div>
+        <div class="whl-arrow">vs</div>
+        <div class="whl-item"><span class="whl-label">💬 WhatsApp Cost</span><span class="whl-val grn-hl" id="wh1_wa_cost">—</span></div>
+        <div class="whl-divider"></div>
+        <div class="whl-item highlight"><span class="whl-label">💰 You Save/mo</span><span class="whl-val gold-hl" id="wh1_saving">—</span></div>
+        <div class="whl-item"><span class="whl-label">📈 More Leads</span><span class="whl-val teal-hl" id="wh1_leads_x">—</span></div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="wiz-card" id="wiz1-step1">
+        <div class="wiz-card-header">
+          <div class="wiz-step-badge">Step 1 of 3</div>
+          <h3 class="wiz-card-title">Tell us about your calling team</h3>
+          <p class="wiz-card-sub">Each field shows its cost impact instantly as you type</p>
+        </div>
+        <div class="wiz-fields">
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Number of telecallers</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">#</span><input id="c1_callers" type="number" value="10" min="1" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">👥 <span id="imp_callers_val">10 callers</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Monthly salary per caller (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="c1_salary" type="number" value="15000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Salary bill: <span id="imp_salary_total">₹1,50,000/mo</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Manager / team lead cost (₹/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="c1_mgr" type="number" value="25000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Total incl. overhead: <span id="imp_tc_cost_total">₹2,15,000/mo</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Infrastructure & tools (₹/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="c1_infra" type="number" value="15000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag slate-tag">Dialers, CRM, office</span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Working days per month</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">#</span><input id="c1_days" type="number" value="26" min="1" max="31" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag slate-tag">Total dials: <span id="imp_total_dials">—</span>/mo</span></div></div></div></div>
+        </div>
+        <div class="wiz-nav"><div></div><button class="wiz-btn-next" onclick="wizGoto(2,'wiz1')">Next: Performance →</button></div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="wiz-card hidden" id="wiz1-step2">
+        <div class="wiz-card-header">
+          <div class="wiz-step-badge">Step 2 of 3</div>
+          <h3 class="wiz-card-title">How does your team perform?</h3>
+          <p class="wiz-card-sub">We compare this directly to WhatsApp benchmarks, side by side</p>
+        </div>
+        <div class="wiz-fields">
+          <div class="wif-two-col">
+            <div class="wif-col-head red-col-head">📞 Your Telecalling</div>
+            <div class="wif-col-head grn-col-head">💬 WhatsApp (with us)</div>
+          </div>
+          <div class="wif-two-col">
+            <div class="wif-input-wrap"><label class="wif-label">Dials per caller per day</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">#</span><input id="c1_dials" type="number" value="100" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Reach: <span id="imp_tc_reach">—</span>/mo</span></div></div></div>
+            <div class="wif-input-wrap"><label class="wif-label">Messages per month</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">#</span><input id="w1_msgs" type="number" value="50000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag grn-tag">Reach: <span id="imp_wa_reach">50,000</span>/mo</span></div></div></div>
+          </div>
+          <div class="wif-two-col">
+            <div class="wif-input-wrap"><label class="wif-label">Pick-up rate (%)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="c1_pickup" type="number" value="6" step="0.5" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Picked up: <span id="imp_tc_pickups">—</span>/mo</span></div></div></div>
+            <div class="wif-input-wrap"><label class="wif-label">Open rate (%)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="w1_open" type="number" value="62" step="0.5" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag grn-tag">Opened: <span id="imp_wa_opens">31,000</span>/mo</span></div></div></div>
+          </div>
+          <div class="wif-two-col">
+            <div class="wif-input-wrap"><label class="wif-label">Lead conversion rate (%)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="c1_conv" type="number" value="8" step="0.5" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Leads: <span id="imp_tc_leads">—</span>/mo</span></div></div></div>
+            <div class="wif-input-wrap"><label class="wif-label">Response rate of opens (%)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="w1_resp" type="number" value="18" step="0.5" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag grn-tag">Leads: <span id="imp_wa_leads">—</span>/mo</span></div></div></div>
+          </div>
+          <div class="wif-two-col">
+            <div class="wif-input-wrap"><label class="wif-label">Revenue per conversion (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="c1_rev" type="number" value="5000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Rev: <span id="imp_tc_rev">—</span>/mo</span></div></div></div>
+            <div class="wif-input-wrap"><label class="wif-label">Lead-to-conversion rate (%)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="w1_conv" type="number" value="12" step="0.5" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag grn-tag">Conv: <span id="imp_wa_conv">—</span>/mo</span></div></div></div>
+          </div>
+          <div class="wif-two-col">
+            <div></div>
+            <div class="wif-input-wrap"><label class="wif-label">Revenue per conversion (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="w1_rev" type="number" value="5000" class="wif-inp"></div></div></div>
+          </div>
+          <div class="wif-sub-head">WhatsApp service costs</div>
+          <div class="wif-two-col">
+            <div class="wif-input-wrap"><label class="wif-label">Cost per message (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="w1_cpm" type="number" value="1.10" step="0.01" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag grn-tag">Msg cost: <span id="imp_wa_msgcost">—</span>/mo</span></div></div></div>
+            <div class="wif-input-wrap"><label class="wif-label">Monthly management fee (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="w1_mgmt" type="number" value="10000" class="wif-inp"></div></div></div>
+          </div>
+          <div class="wif-two-col">
+            <div class="wif-input-wrap"><label class="wif-label">Setup fee (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="w1_setup" type="number" value="22000" class="wif-inp"></div></div></div>
+            <div class="wif-input-wrap"><label class="wif-label">Amortise over (months)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">mo</span><input id="w1_amort" type="number" value="6" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag grn-tag">Total WA: <span id="imp_wa_totalcost">—</span>/mo</span></div></div></div>
+          </div>
+          <div class="wif-two-col">
+            <div class="wif-input-wrap"><label class="wif-label">Automation add-on (₹/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="w1_auto" type="number" value="3000" class="wif-inp"></div></div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="wiz-nav"><button class="wiz-btn-back" onclick="wizGoto(1,'wiz1')">← Back</button><button class="wiz-btn-next" onclick="wizGoto(3,'wiz1')">See My Results →</button></div>
+      </div>
+
+      <!-- STEP 3: Results -->
+      <div class="wiz-card hidden" id="wiz1-step3">
+        <div class="wiz-card-header" style="text-align:center">
+          <div class="wiz-step-badge" style="margin:0 auto">Your Personalised Results</div>
+          <h3 class="wiz-card-title" style="margin-top:8px">Here's what switching delivers for you</h3>
+        </div>
+        <div class="results-hero-grid">
+          <div class="rhg-box savings"><div class="rhg-icon">💰</div><div class="rhg-num" id="r_saving_hero">—</div><div class="rhg-lbl">Saved every month</div></div>
+          <div class="rhg-box leads"><div class="rhg-icon">📈</div><div class="rhg-num" id="r_leads_hero">—</div><div class="rhg-lbl">More leads/month</div></div>
+          <div class="rhg-box cpl"><div class="rhg-icon">⬇️</div><div class="rhg-num" id="r_cpl_hero">—</div><div class="rhg-lbl">Lower cost/lead</div></div>
+          <div class="rhg-box profit"><div class="rhg-icon">📊</div><div class="rhg-num" id="r_profit_hero">—</div><div class="rhg-lbl">Extra profit/mo</div></div>
+        </div>
+        <div class="r1-compare-table">
+          <div class="r1ct-head"></div><div class="r1ct-head red-col-head">📞 Telecalling</div><div class="r1ct-head grn-col-head">💬 WhatsApp</div><div class="r1ct-head gold-col-head">Your Gain</div>
+          <div class="r1ct-label">Monthly Reach</div><div class="r1ct-bad" id="rr_reach_tc">—</div><div class="r1ct-good" id="rr_reach_wa">—</div><div class="r1ct-diff" id="rr_reach_d">—</div>
+          <div class="r1ct-label alt">Leads / Month</div><div class="r1ct-bad alt" id="rr_leads_tc">—</div><div class="r1ct-good alt" id="rr_leads_wa">—</div><div class="r1ct-diff alt" id="rr_leads_d">—</div>
+          <div class="r1ct-label">Conversions / Month</div><div class="r1ct-bad" id="rr_conv_tc">—</div><div class="r1ct-good" id="rr_conv_wa">—</div><div class="r1ct-diff" id="rr_conv_d">—</div>
+          <div class="r1ct-label alt">Total Cost / Month</div><div class="r1ct-bad alt" id="rr_cost_tc">—</div><div class="r1ct-good alt" id="rr_cost_wa">—</div><div class="r1ct-diff alt" id="rr_cost_d">—</div>
+          <div class="r1ct-label">Cost per Lead</div><div class="r1ct-bad" id="rr_cpl_tc">—</div><div class="r1ct-good" id="rr_cpl_wa">—</div><div class="r1ct-diff" id="rr_cpl_d">—</div>
+          <div class="r1ct-label alt">Est. Revenue / Month</div><div class="r1ct-bad alt" id="rr_rev_tc">—</div><div class="r1ct-good alt" id="rr_rev_wa">—</div><div class="r1ct-diff alt" id="rr_rev_d">—</div>
+          <div class="r1ct-label">Net Profit / Month</div><div class="r1ct-bad" id="rr_net_tc">—</div><div class="r1ct-good" id="rr_net_wa">—</div><div class="r1ct-diff" id="rr_net_d">—</div>
+          <div class="r1ct-label alt">ROI</div><div class="r1ct-bad alt" id="rr_roi_tc">—</div><div class="r1ct-good alt" id="rr_roi_wa">—</div><div class="r1ct-diff alt" id="rr_roi_d">—</div>
+        </div>
+        <div class="r1-bars">
+          <div class="r1b-title">Cost per Lead</div>
+          <div class="r1b-row"><span class="r1b-lbl red-txt">📞</span><div class="r1b-track"><div class="r1b-fill red-fill" id="rb_cpl_tc" style="width:100%"></div></div><span class="r1b-val red-txt" id="rb_cpl_tc_v">—</span></div>
+          <div class="r1b-row" style="margin-top:6px"><span class="r1b-lbl grn-txt">💬</span><div class="r1b-track"><div class="r1b-fill grn-fill" id="rb_cpl_wa" style="width:5%"></div></div><span class="r1b-val grn-txt" id="rb_cpl_wa_v">—</span></div>
+          <div class="r1b-title" style="margin-top:16px">Monthly Leads</div>
+          <div class="r1b-row"><span class="r1b-lbl red-txt">📞</span><div class="r1b-track"><div class="r1b-fill red-fill" id="rb_leads_tc" style="width:15%"></div></div><span class="r1b-val red-txt" id="rb_leads_tc_v">—</span></div>
+          <div class="r1b-row" style="margin-top:6px"><span class="r1b-lbl grn-txt">💬</span><div class="r1b-track"><div class="r1b-fill grn-fill" id="rb_leads_wa" style="width:100%"></div></div><span class="r1b-val grn-txt" id="rb_leads_wa_v">—</span></div>
+        </div>
+        <div class="r1-break-even" id="r1_be_msg">—</div>
+        <div class="wiz-nav"><button class="wiz-btn-back" onclick="wizGoto(2,'wiz1')">← Edit Inputs</button><a href="#cta" class="wiz-btn-next" style="text-decoration:none">Get This for My Business →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALC 2: HIRING WIZARD -->
+<section id="calc-hiring" style="background:var(--white);padding:80px clamp(20px,4vw,60px) 100px">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:48px">
+      <p class="eyebrow">True Cost of Hiring</p>
+      <h2>The Hiring Iceberg —<br>What It Really Costs You</h2>
+      <p class="section-sub" style="margin:0 auto">4 steps. Every input shows its hidden cost. Final step = the number your accountant never told you.</p>
+    </div>
+    <div class="wiz-shell" id="wiz2">
+      <div class="wiz-progress">
+        <div class="wiz-step-dot active" data-wiz="1" onclick="wizGoto(1,'wiz2')"><div class="wsd-circle">1</div><div class="wsd-label">Package</div></div>
+        <div class="wiz-connector"></div>
+        <div class="wiz-step-dot" data-wiz="2" onclick="wizGoto(2,'wiz2')"><div class="wsd-circle">2</div><div class="wsd-label">Hiring</div></div>
+        <div class="wiz-connector"></div>
+        <div class="wiz-step-dot" data-wiz="3" onclick="wizGoto(3,'wiz2')"><div class="wsd-circle">3</div><div class="wsd-label">Training</div></div>
+        <div class="wiz-connector"></div>
+        <div class="wiz-step-dot" data-wiz="4" onclick="wizGoto(4,'wiz2')"><div class="wsd-circle">4</div><div class="wsd-label">Results</div></div>
+      </div>
+      <div class="wiz-headline-bar">
+        <div class="whl-item"><span class="whl-label">💼 Salary Bill</span><span class="whl-val red-hl" id="wh2_sal">—</span></div>
+        <div class="whl-item"><span class="whl-label">⚡ One-Time</span><span class="whl-val gold-hl" id="wh2_onetime">—</span></div>
+        <div class="whl-item"><span class="whl-label">🔁 Monthly Total</span><span class="whl-val red-hl" id="wh2_monthly">—</span></div>
+        <div class="whl-divider"></div>
+        <div class="whl-item highlight"><span class="whl-label">💸 True Cost/Caller</span><span class="whl-val gold-hl" id="wh2_perhead">—</span></div>
+        <div class="whl-item"><span class="whl-label">✅ vs WhatsApp</span><span class="whl-val grn-hl" id="wh2_saved">—</span></div>
+      </div>
+
+      <!-- H STEP 1 -->
+      <div class="wiz-card" id="wiz2-step1">
+        <div class="wiz-card-header"><div class="wiz-step-badge" style="background:rgba(124,58,237,0.1);color:#7C3AED">Step 1 of 4</div><h3 class="wiz-card-title">💼 Salary & Package</h3><p class="wiz-card-sub">What does your calling team cost in base compensation?</p></div>
+        <div class="wiz-fields">
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Number of callers to hire</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">#</span><input id="h_count" type="number" value="10" min="1" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Team size: <span id="imp_h_count">10 callers</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Monthly gross salary per caller (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_salary" type="number" value="15000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Salary bill: <span id="imp_h_sal_bill">₹1,50,000/mo</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Performance incentive per caller (₹/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_incentive" type="number" value="3000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Incentive total: <span id="imp_h_inc">₹30,000/mo</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">PF / ESI employer contribution (%)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="h_pf" type="number" value="13.75" step="0.25" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">PF cost: <span id="imp_h_pf">—</span>/mo</span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Team lead salary (₹/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_lead" type="number" value="25000" class="wif-inp"></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Number of team leads</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">#</span><input id="h_leads" type="number" value="1" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Lead cost: <span id="imp_h_lead_total">₹25,000/mo</span></span></div></div></div></div>
+        </div>
+        <div class="wiz-nav"><div></div><button class="wiz-btn-next" onclick="wizGoto(2,'wiz2')">Next: Hiring Costs →</button></div>
+      </div>
+
+      <!-- H STEP 2 -->
+      <div class="wiz-card hidden" id="wiz2-step2">
+        <div class="wiz-card-header"><div class="wiz-step-badge" style="background:rgba(245,158,11,0.1);color:#92400E">Step 2 of 4</div><h3 class="wiz-card-title">🔍 Hiring & Infrastructure</h3><p class="wiz-card-sub">The cost of finding, onboarding and equipping each person</p></div>
+        <div class="wiz-fields">
+          <div class="wif-sub-head">HR & Recruitment</div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">HR recruiter salary (₹/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_hr_sal" type="number" value="20000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag amber-tag">Fixed overhead every month</span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Job portal / ad spend (₹/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_jd" type="number" value="5000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag amber-tag">Recurring every month</span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Background check per hire (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_bgv" type="number" value="500" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag amber-tag">Total: <span id="imp_h_bgv">₹5,000</span> per batch</span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Legal / admin per hire (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_legal" type="number" value="300" class="wif-inp"></div></div></div></div>
+          <div class="wif-sub-head" style="margin-top:20px">Infrastructure per Seat</div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Dialer / CRM (₹/seat/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_dialer" type="number" value="800" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Total: <span id="imp_h_dialer">₹8,000/mo</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Equipment per seat (₹, one-time)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_equip" type="number" value="4000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag amber-tag">Total: <span id="imp_h_equip">₹40,000</span> one-time</span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Office space (₹/seat/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_office" type="number" value="3000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Total: <span id="imp_h_office">₹30,000/mo</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Telephony / internet (₹/seat/mo)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_tel" type="number" value="600" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Total: <span id="imp_h_tel">₹6,000/mo</span></span></div></div></div></div>
+        </div>
+        <div class="wiz-nav"><button class="wiz-btn-back" onclick="wizGoto(1,'wiz2')">← Back</button><button class="wiz-btn-next" onclick="wizGoto(3,'wiz2')">Next: Training & Attrition →</button></div>
+      </div>
+
+      <!-- H STEP 3 -->
+      <div class="wiz-card hidden" id="wiz2-step3">
+        <div class="wiz-card-header"><div class="wiz-step-badge" style="background:rgba(239,68,68,0.1);color:#9F1239">Step 3 of 4</div><h3 class="wiz-card-title">🎓 Training & Attrition</h3><p class="wiz-card-sub">The costs nobody budgets for — until it's too late</p></div>
+        <div class="wiz-fields">
+          <div class="wif-sub-head">Training & Onboarding</div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Training duration (days)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">d</span><input id="h_train_days" type="number" value="14" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag amber-tag">Unproductive for <span id="imp_h_train_days">14 days</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Trainer cost per day (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_trainer" type="number" value="2000" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag amber-tag">Trainer total: <span id="imp_h_trainer">₹28,000</span>/batch</span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Training materials per batch (₹)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">₹</span><input id="h_mat" type="number" value="3000" class="wif-inp"></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Productivity loss during training (%)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="h_prod_loss" type="number" value="100" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Wasted salary: <span id="imp_h_train_sal">—</span></span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Ramp-up to full productivity (months)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">mo</span><input id="h_ramp" type="number" value="1.5" step="0.5" class="wif-inp"></div></div></div></div>
+          <div class="wif-sub-head" style="margin-top:20px">Attrition</div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Annual attrition rate (%)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="h_attr" type="number" value="35" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">You lose <span id="imp_h_exits">3–4</span> callers/year</span></div></div></div></div>
+          <div class="wif-row"><div class="wif-input-wrap"><label class="wif-label">Gratuity provision (% of salary)</label><div class="wif-control"><div class="wif-field"><span class="wif-unit">%</span><input id="h_grat" type="number" value="4.81" step="0.1" class="wif-inp"></div><div class="wif-impact"><span class="imp-tag red-tag">Monthly provision: <span id="imp_h_grat">—</span></span></div></div></div></div>
+        </div>
+        <div class="wiz-nav"><button class="wiz-btn-back" onclick="wizGoto(2,'wiz2')">← Back</button><button class="wiz-btn-next" onclick="wizGoto(4,'wiz2')">See Full Cost Breakdown →</button></div>
+      </div>
+
+      <!-- H STEP 4: Results -->
+      <div class="wiz-card hidden" id="wiz2-step4">
+        <div class="wiz-card-header" style="text-align:center"><div class="wiz-step-badge" style="margin:0 auto;background:rgba(239,68,68,0.1);color:#9F1239">Your True Hiring Cost</div><h3 class="wiz-card-title" style="margin-top:8px">Here's what your calling team really costs you</h3></div>
+        <div class="results-hero-grid">
+          <div class="rhg-box" style="background:rgba(239,68,68,0.07);border-color:rgba(239,68,68,0.2)"><div class="rhg-icon">💸</div><div class="rhg-num" style="color:#EF4444" id="h_hero_monthly">—</div><div class="rhg-lbl">Monthly recurring</div></div>
+          <div class="rhg-box" style="background:rgba(245,158,11,0.07);border-color:rgba(245,158,11,0.2)"><div class="rhg-icon">⚡</div><div class="rhg-num" style="color:var(--gold)" id="h_hero_onetime">—</div><div class="rhg-lbl">One-time setup</div></div>
+          <div class="rhg-box" style="background:rgba(239,68,68,0.07);border-color:rgba(239,68,68,0.2)"><div class="rhg-icon">📉</div><div class="rhg-num" style="color:#EF4444" id="h_hero_attrition">—</div><div class="rhg-lbl">Attrition cost/yr</div></div>
+          <div class="rhg-box" style="background:rgba(16,185,129,0.07);border-color:rgba(16,185,129,0.2)"><div class="rhg-icon">✅</div><div class="rhg-num" style="color:var(--green)" id="h_hero_saved">—</div><div class="rhg-lbl">Saved/mo vs WhatsApp</div></div>
+        </div>
+        <div class="h-result-cols">
+          <div class="h-result-block"><div class="h-rb-head gold-txt">⚡ One-Time</div><div class="h-rb-row"><span>Recruitment</span><span id="hc_recruit">—</span></div><div class="h-rb-row alt"><span>Equipment</span><span id="hc_equip">—</span></div><div class="h-rb-row"><span>Training</span><span id="hc_train">—</span></div><div class="h-rb-row alt"><span>Training salary</span><span id="hc_train_sal">—</span></div><div class="h-rb-total"><span>Total</span><span class="gold-txt" id="hc_onetime">—</span></div></div>
+          <div class="h-result-block"><div class="h-rb-head red-txt">🔁 Monthly</div><div class="h-rb-row"><span>Salaries + incentives</span><span id="hc_sal">—</span></div><div class="h-rb-row alt"><span>PF / ESI</span><span id="hc_pf">—</span></div><div class="h-rb-row"><span>Team leads</span><span id="hc_lead">—</span></div><div class="h-rb-row alt"><span>HR recruiter</span><span id="hc_hr">—</span></div><div class="h-rb-row"><span>Dialer/CRM</span><span id="hc_dialer">—</span></div><div class="h-rb-row alt"><span>Office + telephony</span><span id="hc_office_tel">—</span></div><div class="h-rb-row"><span>Job portals</span><span id="hc_jd">—</span></div><div class="h-rb-row alt"><span>Gratuity provision</span><span id="hc_grat">—</span></div><div class="h-rb-total"><span>Total/mo</span><span class="red-txt" id="hc_monthly">—</span></div></div>
+          <div class="h-result-block"><div class="h-rb-head" style="color:#F87171">📉 Attrition/Year</div><div class="h-rb-row"><span>Callers lost</span><span id="ha_exits">—</span></div><div class="h-rb-row alt"><span>Re-hire cost</span><span id="ha_rehire">—</span></div><div class="h-rb-row"><span>Productivity loss</span><span id="ha_prod">—</span></div><div class="h-rb-total"><span>Total attrition</span><span class="red-txt" id="ha_total">—</span></div></div>
+        </div>
+        <div class="h-vs-bar">
+          <div class="hvb-label">Your team vs WhatsApp managed (monthly cost)</div>
+          <div class="hvb-row"><span class="hvb-name red-txt">📞 Your team</span><div class="hvb-track"><div class="hvb-fill red-fill" id="h_bar_tc" style="width:100%"></div></div><span class="hvb-val red-txt" id="h_bar_tc_v">—</span></div>
+          <div class="hvb-row" style="margin-top:8px"><span class="hvb-name grn-txt">💬 WhatsApp</span><div class="hvb-track"><div class="hvb-fill grn-fill" id="h_bar_wa" style="width:32%"></div></div><span class="hvb-val grn-txt">~₹68,000/mo</span></div>
+        </div>
+        <div class="h-insight-bar" id="hc_insight">—</div>
+        <div class="wiz-nav"><button class="wiz-btn-back" onclick="wizGoto(3,'wiz2')">← Edit Inputs</button><a href="#cta" class="wiz-btn-next" style="text-decoration:none">Switch to WhatsApp →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.wiz-shell{max-width:860px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 8px 48px rgba(0,0,0,0.1)}
+.wiz-progress{display:flex;align-items:center;background:var(--navy);padding:20px 32px}
+.wiz-step-dot{display:flex;align-items:center;gap:10px;cursor:pointer;transition:opacity .2s}
+.wiz-step-dot:hover{opacity:.8}
+.wsd-circle{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;background:rgba(255,255,255,.08);color:rgba(255,255,255,.4);border:2px solid rgba(255,255,255,.12);transition:all .3s}
+.wiz-step-dot.active .wsd-circle{background:var(--teal);color:#fff;border-color:var(--teal);box-shadow:0 0 0 4px rgba(2,128,144,.25)}
+.wiz-step-dot.done .wsd-circle{background:var(--green);color:#fff;border-color:var(--green)}
+.wsd-label{font-size:.72rem;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.07em;transition:color .3s}
+.wiz-step-dot.active .wsd-label{color:var(--teal-mid)}
+.wiz-step-dot.done .wsd-label{color:var(--green)}
+.wiz-connector{flex:1;height:2px;background:rgba(255,255,255,.08);margin:0 12px}
+.wiz-headline-bar{display:flex;align-items:center;background:#0A1530;padding:0;border-bottom:1px solid rgba(255,255,255,.06);overflow-x:auto}
+.whl-item{flex:1;min-width:100px;padding:14px 16px;text-align:center;border-right:1px solid rgba(255,255,255,.06)}
+.whl-item.highlight{background:rgba(2,128,144,.08)}
+.whl-label{display:block;font-size:.6rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.whl-val{font-family:var(--display);font-size:1.05rem;font-weight:800;color:#fff;transition:all .3s}
+.red-hl{color:#F87171!important}.grn-hl{color:#34D399!important}.gold-hl{color:var(--gold)!important}.teal-hl{color:var(--teal-mid)!important}
+.whl-arrow{padding:0 12px;color:rgba(255,255,255,.2);font-size:.9rem;flex-shrink:0}
+.whl-divider{width:1px;background:rgba(255,255,255,.1);align-self:stretch;margin:0 4px;flex-shrink:0}
+.wiz-card{background:#fff;padding:32px}
+.wiz-card.hidden{display:none}
+.wiz-card-header{margin-bottom:28px}
+.wiz-step-badge{display:inline-block;padding:4px 12px;border-radius:100px;background:rgba(2,128,144,.1);color:var(--teal);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.wiz-card-title{font-size:1.4rem;font-weight:800;color:var(--dark);font-family:var(--display)}
+.wiz-card-sub{font-size:.875rem;color:var(--slate);margin-top:4px}
+.wiz-fields{display:flex;flex-direction:column;gap:16px}
+.wif-row{display:flex;gap:16px}
+.wif-input-wrap{flex:1}
+.wif-label{display:block;font-size:.78rem;font-weight:600;color:var(--dark);margin-bottom:6px}
+.wif-control{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.wif-field{display:flex;align-items:center;background:var(--off);border:2px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .15s;min-width:160px}
+.wif-field:focus-within{border-color:var(--teal)}
+.wif-unit{padding:0 10px;font-size:.78rem;font-weight:600;color:var(--slate);background:#EEF2F6;border-right:1px solid var(--border);height:42px;display:flex;align-items:center;flex-shrink:0}
+.wif-inp{flex:1;border:none;outline:none;padding:0 12px;height:42px;font-size:1rem;font-weight:700;color:var(--dark);background:transparent;font-family:var(--body);width:100%;min-width:80px}
+.wif-inp::-webkit-inner-spin-button{opacity:.4}
+.wif-impact{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.imp-tag{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:100px;font-size:.72rem;font-weight:600;transition:all .25s}
+.red-tag{background:#FEE2E2;color:#B91C1C}.grn-tag{background:#D1FAE5;color:#065F46}.amber-tag{background:#FEF3C7;color:#92400E}.slate-tag{background:var(--lightGray);color:var(--slate)}
+.wif-two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wif-col-head{padding:8px 12px;border-radius:8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.red-col-head{background:#FEE2E2;color:#B91C1C}.grn-col-head{background:#D1FAE5;color:#065F46}.gold-col-head{background:#FEF3C7;color:#92400E}
+.wif-sub-head{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--slate);border-bottom:1px solid var(--border);padding-bottom:8px}
+.wiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
+.wiz-btn-next{background:var(--teal);color:#fff;border:none;padding:13px 28px;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:var(--body);transition:all .2s;box-shadow:0 4px 16px rgba(2,128,144,.3)}
+.wiz-btn-next:hover{background:var(--teal-mid);transform:translateY(-1px)}
+.wiz-btn-back{background:none;color:var(--slate);border:1.5px solid var(--border);padding:12px 24px;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;font-family:var(--body);transition:all .2s}
+.wiz-btn-back:hover{border-color:var(--teal);color:var(--teal)}
+.results-hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.rhg-box{border-radius:12px;padding:20px 16px;text-align:center;border:1px solid rgba(0,0,0,.06);transition:transform .2s}
+.rhg-box:hover{transform:translateY(-2px)}
+.rhg-box.savings{background:rgba(16,185,129,.07);border-color:rgba(16,185,129,.2)}
+.rhg-box.leads{background:rgba(5,155,170,.07);border-color:rgba(5,155,170,.2)}
+.rhg-box.cpl{background:rgba(16,185,129,.07);border-color:rgba(16,185,129,.2)}
+.rhg-box.profit{background:rgba(245,158,11,.07);border-color:rgba(245,158,11,.2)}
+.rhg-icon{font-size:1.4rem;margin-bottom:8px}
+.rhg-num{font-family:var(--display);font-size:1.5rem;font-weight:800;color:var(--dark);line-height:1}
+.rhg-box.savings .rhg-num{color:var(--green)}.rhg-box.leads .rhg-num{color:var(--teal)}.rhg-box.cpl .rhg-num{color:var(--green)}.rhg-box.profit .rhg-num{color:var(--gold)}
+.rhg-lbl{font-size:.7rem;color:var(--slate);margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+.r1-compare-table{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:20px;font-size:.82rem}
+.r1ct-head{padding:10px 12px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.r1ct-head:nth-child(1){background:var(--lightGray);color:var(--slate)}
+.r1ct-label{padding:10px 12px;color:var(--dark);font-weight:500;border-top:1px solid var(--border);display:flex;align-items:center}
+.r1ct-bad{padding:10px 10px;color:var(--red);font-weight:700;text-align:center;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.r1ct-good{padding:10px 10px;color:var(--green);font-weight:700;text-align:center;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.r1ct-diff{padding:10px 10px;color:#7C3AED;font-weight:700;text-align:center;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.r1ct-label.alt,.r1ct-bad.alt,.r1ct-good.alt,.r1ct-diff.alt{background:#FAFCFF}
+.r1-bars{background:var(--off);border-radius:12px;padding:20px;margin-bottom:20px}
+.r1b-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--slate);margin-bottom:8px}
+.r1b-row{display:flex;align-items:center;gap:10px}
+.r1b-lbl{font-size:1rem;flex-shrink:0;width:24px}
+.r1b-track{flex:1;height:24px;background:rgba(0,0,0,.05);border-radius:6px;overflow:hidden}
+.r1b-fill{height:100%;border-radius:6px;transition:width .6s cubic-bezier(.4,0,.2,1);min-width:4px}
+.r1b-val{font-size:.78rem;font-weight:700;flex-shrink:0;min-width:80px;text-align:right}
+.red-fill{background:linear-gradient(90deg,#EF4444,#F87171)}.grn-fill{background:linear-gradient(90deg,#10B981,#34D399)}
+.red-txt{color:var(--red)!important}.grn-txt{color:var(--green)!important}.gold-txt{color:var(--gold)!important}
+.r1-break-even{padding:14px 20px;background:rgba(2,128,144,.07);border:1px solid rgba(2,128,144,.2);border-radius:10px;font-size:.875rem;color:var(--teal);font-weight:600;text-align:center}
+.h-result-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.h-result-block{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.h-rb-head{padding:9px 14px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:var(--lightGray)}
+.h-rb-row{display:flex;justify-content:space-between;padding:8px 14px;font-size:.78rem;border-top:1px solid var(--border)}
+.h-rb-row span:first-child{color:var(--slate)}.h-rb-row span:last-child{font-weight:700;color:var(--dark)}
+.h-rb-row.alt{background:#FAFCFF}
+.h-rb-total{display:flex;justify-content:space-between;padding:10px 14px;font-size:.82rem;font-weight:700;background:var(--lightGray);border-top:1px solid var(--border)}
+.h-vs-bar{background:var(--navy);border-radius:12px;padding:20px;margin-bottom:16px}
+.hvb-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.35);margin-bottom:12px}
+.hvb-row{display:flex;align-items:center;gap:10px}
+.hvb-name{font-size:.78rem;font-weight:600;flex-shrink:0;min-width:90px}
+.hvb-track{flex:1;height:28px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden}
+.hvb-fill{height:100%;border-radius:6px;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.hvb-val{font-size:.78rem;font-weight:700;flex-shrink:0;min-width:80px;text-align:right}
+.h-insight-bar{padding:14px 18px;background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2);border-radius:10px;font-size:.875rem;color:var(--dark);font-weight:500;text-align:center;line-height:1.6}
+@media(max-width:700px){
+  .wiz-card{padding:20px}
+  .results-hero-grid{grid-template-columns:1fr 1fr}
+  .r1-compare-table{grid-template-columns:1.1fr .9fr .9fr .7fr;font-size:.72rem}
+  .h-result-cols{grid-template-columns:1fr}
+  .wif-two-col{grid-template-columns:1fr}
+  .whl-item{min-width:90px}
+  .wiz-progress{padding:16px}
+  .wsd-label{display:none}
+}
+</style>
+
+<script>
+const fmt=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const fmtN=n=>Math.round(n).toLocaleString('en-IN');
+const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v};
+const setW=(id,p)=>{const el=document.getElementById(id);if(el)el.style.width=Math.max(2,Math.min(100,p))+'%'};
+const g=id=>+(document.getElementById(id)?.value||0);
+
+function wizGoto(step,wizId){
+  const shell=document.getElementById(wizId);
+  if(!shell)return;
+  shell.querySelectorAll('.wiz-card').forEach(c=>c.classList.add('hidden'));
+  const t=document.getElementById(wizId+'-step'+step);
+  if(t)t.classList.remove('hidden');
+  shell.querySelectorAll('.wiz-step-dot').forEach(dot=>{
+    const n=+dot.dataset.wiz;
+    dot.classList.remove('active','done');
+    if(n===step)dot.classList.add('active');
+    if(n<step)dot.classList.add('done');
+  });
+  shell.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function calc1(){
+  const callers=g('c1_callers'),salary=g('c1_salary'),mgr=g('c1_mgr'),infra=g('c1_infra'),days=g('c1_days')||26;
+  const dials=g('c1_dials'),pickup=g('c1_pickup'),convTC=g('c1_conv'),revTC=g('c1_rev');
+  const msgs=g('w1_msgs'),cpm=g('w1_cpm'),openR=g('w1_open'),respR=g('w1_resp'),convWA=g('w1_conv'),revWA=g('w1_rev');
+  const mgmt=g('w1_mgmt'),auto=g('w1_auto'),setup=g('w1_setup'),amort=g('w1_amort')||6;
+  const tc_cost=callers*salary+mgr+infra;
+  const tc_reach=callers*dials*days;
+  const tc_leads=tc_reach*(pickup/100);
+  const tc_conv=tc_leads*(convTC/100);
+  const tc_cpl=tc_leads>0?tc_cost/tc_leads:0;
+  const tc_rev=tc_conv*revTC;
+  const tc_net=tc_rev-tc_cost;
+  const tc_roi=tc_cost>0?(tc_net/tc_cost)*100:0;
+  const wa_opens=msgs*(openR/100);
+  const wa_leads=wa_opens*(respR/100);
+  const wa_conv=wa_leads*(convWA/100);
+  const wa_cost=msgs*cpm+mgmt+auto+setup/amort;
+  const wa_cpl=wa_leads>0?wa_cost/wa_leads:0;
+  const wa_rev=wa_conv*revWA;
+  const wa_net=wa_rev-wa_cost;
+  const wa_roi=wa_cost>0?(wa_net/wa_cost)*100:0;
+  const saving=tc_cost-wa_cost;
+  const lm=tc_leads>0?wa_leads/tc_leads:0;
+  const cplDrop=tc_cpl>0?((tc_cpl-wa_cpl)/tc_cpl*100):0;
+  const be=saving>0?(setup/saving).toFixed(1):'<1';
+  set('wh1_tc_cost',fmt(tc_cost)+'/mo');
+  set('wh1_wa_cost',fmt(wa_cost)+'/mo');
+  set('wh1_saving',fmt(Math.abs(saving))+'/mo');
+  set('wh1_leads_x',lm.toFixed(1)+'×');
+  set('imp_callers_val',callers+' callers');
+  set('imp_salary_total',fmt(callers*salary)+'/mo');
+  set('imp_tc_cost_total',fmt(tc_cost)+'/mo');
+  set('imp_total_dials',fmtN(callers*dials*days));
+  set('imp_tc_reach',fmtN(tc_reach));
+  set('imp_wa_reach',fmtN(msgs));
+  set('imp_tc_pickups',fmtN(tc_leads));
+  set('imp_wa_opens',fmtN(wa_opens));
+  set('imp_tc_leads',fmtN(tc_leads));
+  set('imp_wa_leads',fmtN(wa_leads));
+  set('imp_tc_rev',fmt(tc_rev));
+  set('imp_wa_conv',fmtN(wa_conv));
+  set('imp_wa_msgcost',fmt(msgs*cpm));
+  set('imp_wa_totalcost',fmt(wa_cost));
+  set('r_saving_hero',fmt(Math.abs(saving))+'/mo');
+  set('r_leads_hero',lm.toFixed(1)+'× more');
+  set('r_cpl_hero',cplDrop>0?'-'+cplDrop.toFixed(0)+'%':'–');
+  set('r_profit_hero',fmt(wa_net-tc_net)+'/mo');
+  set('rr_reach_tc',fmtN(tc_reach));set('rr_reach_wa',fmtN(msgs));set('rr_reach_d','+'+(msgs/Math.max(tc_reach,1)).toFixed(1)+'×');
+  set('rr_leads_tc',fmtN(tc_leads));set('rr_leads_wa',fmtN(wa_leads));set('rr_leads_d','+'+(wa_leads/Math.max(tc_leads,1)).toFixed(1)+'×');
+  set('rr_conv_tc',fmtN(tc_conv));set('rr_conv_wa',fmtN(wa_conv));set('rr_conv_d','+'+(wa_conv/Math.max(tc_conv,1)).toFixed(1)+'×');
+  set('rr_cost_tc',fmt(tc_cost));set('rr_cost_wa',fmt(wa_cost));set('rr_cost_d','Save '+fmt(saving));
+  set('rr_cpl_tc',fmt(tc_cpl));set('rr_cpl_wa',fmt(wa_cpl));set('rr_cpl_d',cplDrop>0?'-'+cplDrop.toFixed(0)+'% cheaper':'–');
+  set('rr_rev_tc',fmt(tc_rev));set('rr_rev_wa',fmt(wa_rev));set('rr_rev_d','+'+fmt(wa_rev-tc_rev));
+  set('rr_net_tc',fmt(tc_net));set('rr_net_wa',fmt(wa_net));set('rr_net_d','+'+fmt(wa_net-tc_net));
+  set('rr_roi_tc',tc_roi.toFixed(0)+'%');set('rr_roi_wa',wa_roi.toFixed(0)+'%');set('rr_roi_d','+'+(wa_roi-tc_roi).toFixed(0)+'pp');
+  const maxC=Math.max(tc_cpl,wa_cpl,1);
+  setW('rb_cpl_tc',(tc_cpl/maxC)*100);set('rb_cpl_tc_v',fmt(tc_cpl)+'/lead');
+  setW('rb_cpl_wa',(wa_cpl/maxC)*100);set('rb_cpl_wa_v',fmt(wa_cpl)+'/lead');
+  const maxL=Math.max(tc_leads,wa_leads,1);
+  setW('rb_leads_tc',(tc_leads/maxL)*100);set('rb_leads_tc_v',fmtN(tc_leads)+' leads');
+  setW('rb_leads_wa',(wa_leads/maxL)*100);set('rb_leads_wa_v',fmtN(wa_leads)+' leads');
+  set('r1_be_msg',saving>0?`⏱ Setup fee recovered in ${be} months — then pure savings of ${fmt(saving)}/month.`:`Increase message volume or reduce costs to improve the comparison.`);
+}
+
+function calcHiring(){
+  const count=g('h_count'),salary=g('h_salary'),incentive=g('h_incentive'),pf=g('h_pf');
+  const lead_sal=g('h_lead'),lead_cnt=g('h_leads');
+  const hr_sal=g('h_hr_sal'),jd=g('h_jd'),bgv=g('h_bgv'),legal=g('h_legal');
+  const train_d=g('h_train_days'),trainer=g('h_trainer'),mat=g('h_mat'),prod_loss=g('h_prod_loss'),ramp=g('h_ramp');
+  const attr=g('h_attr'),dialer=g('h_dialer'),equip=g('h_equip'),office=g('h_office'),tel=g('h_tel'),grat_pct=g('h_grat');
+  const recruit_c=count*(bgv+legal)+jd+hr_sal;
+  const equip_c=count*equip;
+  const train_c=(train_d*trainer)+mat;
+  const train_sal=count*salary*(train_d/26)*(prod_loss/100);
+  const onetime=recruit_c+equip_c+train_c+train_sal;
+  const m_sal=count*(salary+incentive);
+  const m_pf=m_sal*(pf/100);
+  const m_lead=lead_cnt*lead_sal;
+  const m_dialer=count*dialer;
+  const m_office=count*(office+tel);
+  const m_grat=m_sal*(grat_pct/100);
+  const m_jd=jd*.5;
+  const monthly=m_sal+m_pf+m_lead+hr_sal+m_dialer+m_office+m_grat+m_jd;
+  const exits_yr=count*(attr/100);
+  const rehire_c=exits_yr*((recruit_c/Math.max(count,1))+train_c+(salary*train_d/26));
+  const prod_yr=exits_yr*salary*ramp;
+  const attrition=rehire_c+prod_yr;
+  const annual=(monthly*12)+onetime+attrition;
+  const per_head=count>0?(monthly/count)+(onetime/count/12):0;
+  const wa_equiv=68000;
+  const saved=monthly-wa_equiv;
+  set('wh2_sal',fmt(m_sal)+'/mo');set('wh2_onetime',fmt(onetime));set('wh2_monthly',fmt(monthly)+'/mo');
+  set('wh2_perhead',fmt(per_head)+'/mo');set('wh2_saved',saved>0?'Save '+fmt(saved)+'/mo':'Comparable');
+  set('imp_h_count',count+' callers');
+  set('imp_h_sal_bill',fmt(count*salary)+'/mo');
+  set('imp_h_inc',fmt(count*incentive)+'/mo');
+  set('imp_h_pf',fmt(m_pf));
+  set('imp_h_lead_total',fmt(lead_cnt*lead_sal)+'/mo');
+  set('imp_h_bgv',fmt(count*bgv));
+  set('imp_h_dialer',fmt(m_dialer)+'/mo');
+  set('imp_h_equip',fmt(equip_c));
+  set('imp_h_office',fmt(count*office)+'/mo');
+  set('imp_h_tel',fmt(count*tel)+'/mo');
+  set('imp_h_train_days',train_d+' days');
+  set('imp_h_trainer',fmt(train_d*trainer)+'/batch');
+  set('imp_h_train_sal',fmt(train_sal));
+  set('imp_h_exits',exits_yr.toFixed(1));
+  set('imp_h_grat',fmt(m_grat)+'/mo');
+  set('h_hero_monthly',fmt(monthly)+'/mo');set('h_hero_onetime',fmt(onetime));
+  set('h_hero_attrition',fmt(attrition)+'/yr');set('h_hero_saved',saved>0?fmt(saved)+'/mo':'–');
+  set('hkpi_monthly',fmt(monthly));set('hkpi_perhead',fmt(per_head));
+  set('hkpi_annual',fmt(annual));set('hkpi_onetime',fmt(onetime));
+  set('hkpi_attrition',fmt(attrition));set('hkpi_saved',saved>0?'Save '+fmt(saved):'Similar');
+  set('hc_recruit',fmt(recruit_c));set('hc_equip',fmt(equip_c));set('hc_train',fmt(train_c));
+  set('hc_train_sal',fmt(train_sal));set('hc_onetime',fmt(onetime));
+  set('hc_sal',fmt(m_sal));set('hc_pf',fmt(m_pf));set('hc_lead',fmt(m_lead));set('hc_hr',fmt(hr_sal));
+  set('hc_dialer',fmt(m_dialer));set('hc_office_tel',fmt(m_office));set('hc_jd',fmt(m_jd));
+  set('hc_grat',fmt(m_grat));set('hc_monthly',fmt(monthly));
+  set('ha_exits',exits_yr.toFixed(1)+' people');set('ha_rehire',fmt(rehire_c));
+  set('ha_prod',fmt(prod_yr));set('ha_total',fmt(attrition));
+  const maxB=Math.max(monthly,wa_equiv,1);
+  setW('h_bar_tc',(monthly/maxB)*100);set('h_bar_tc_v',fmt(monthly)+'/mo');
+  setW('h_bar_wa',(wa_equiv/maxB)*100);
+  const ins=document.getElementById('hc_insight');
+  if(ins)ins.textContent=saved>0
+    ?`Your true monthly cost is ${fmt(monthly)} vs ~${fmt(wa_equiv)} for WhatsApp managed. You overspend ${fmt(saved)}/month — ${fmt(saved*12)} wasted per year. Plus ${exits_yr.toFixed(1)} people will quit on you this year.`
+    :`Your team cost (${fmt(monthly)}/mo) is comparable to WhatsApp managed — but you still carry ${fmt(attrition)} in attrition costs this year and all the management risk.`;
+}
+
+document.querySelectorAll('#calc-compare input,#calc-hiring input').forEach(el=>el.addEventListener('input',()=>{calc1();calcHiring();}));
+window.addEventListener('DOMContentLoaded',()=>{calc1();calcHiring();});
+</script>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 WhatsApp Growth Partner. All rights reserved.</p>
+  <div class="f-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#cta">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav background on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 40
+      ? 'rgba(13,27,64,0.98)'
+      : 'rgba(13,27,64,0.96)';
+  });
+</script>
+</body>
+</html>
